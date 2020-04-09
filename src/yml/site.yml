@@ -1,12 +1,16 @@
-name: Diego
-title: Coflow
-description: Diegofornalha
+name: TecHooT
+title: TecHooT
+description: The Techoot (or TecH007) is a blog about computer systems mainly targeted at those with little to no prior technical knowledge.
 tags:
   - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
+  - computer systems
+  - security
+  - graphics
+  - cpu
+  - processor
+  - gpu
+  - computer
+  - hardware
 show_hero: true
 menu:
   - title: Home
@@ -17,5 +21,5 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-email: youremail@xyz.com
+email: 
 disqus_username: disqus_username

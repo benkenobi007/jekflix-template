@@ -1,8 +1,10 @@
 .idea
 .DS_Store
 .sass-cache
+.bundle
 Gemfile.lock
 package-json.lock
 _site
 node_modules
 _drafts
+vendor

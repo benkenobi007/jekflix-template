@@ -1,15 +1,17 @@
 # Site Settings
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by Thiago Rossener.
+name: TecHooT
+title: TecHooT
+description: The Techoot (or TecH007) is a blog about computer systems mainly targeted at those with little to no prior technical knowledge.
 tags:
   - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
-email: youremail@xyz.com
-disqus_username: disqus_username
+  - computer systems
+  - security
+  - graphics
+  - cpu
+  - processor
+  - gpu
+  - computer
+  - hardware
 show_hero: true
 menu:
   - title: Home
@@ -20,16 +22,14 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
+email:
+disqus_username: disqus_username
 
 
 # Social Media Settings
 # Remove the item if you don't need it
-github_username: github_username
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
-linkedin_username: linkedin_username
-medium_username: medium_username
+github_username: benkenobi007
+
 
 
 # Posts Settings
@@ -56,8 +56,8 @@ collections:
   authors:
     output: true
 paginate_path: "/page/:num/"
-show_get_theme_btn: true
-use_logo: false
+show_get_theme_btn: false
+use_logo: true
 
 # Content paginator
 paginate_content:
@@ -96,8 +96,9 @@ exclude: [
   'Gemfile',
   'Gemfile.lock',
   'gulpfile.js',
-  'README.md'
+  'README.md',
+  'vendor'
 ]
 
 # Theme
-version: v3.0.2
+version: v2.0
