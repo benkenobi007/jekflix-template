@@ -1,10 +1,10 @@
 ---
-date: 2019-08-05 17:00:49
+date: 2019-08-17 17:00:49
 layout: post
 title: "Graphics Pipeline Overview"
 subtitle: 
 description: This post gives a gentle introduction to rasterization, the  most common algorithm for displaying 3D data on a 2D screen.
-image: /assets/img/Meltdown/BP_Meltdown-Spectre.png
+image: /assets/img/Gfx_Pipeline/graphics_background_1.jpg
 optimized_image:
 category: graphics
 tags:
@@ -29,7 +29,7 @@ The most popular display adapters are
 - [HDMI](https://en.wikipedia.org/wiki/HDMI)
 - [DVI](https://en.wikipedia.org/wiki/Digital_Visual_Interface)
 
-## Graphics APIs
+## Graphics APIs 
 
 Due to the sheer complexity of most modern 3D applications (read AAA games), the use of APIs (Application Programming Interfaces) has become ubiquitous for al kinds of graphics programming. The primary benefits of the APIs is that they abstract away a significantamount of unnecessary detail away from the hardware while still enabling programmers to control the graphics operations on the GPU. Someof the most well known APIs are [*OpenGL*](https://www.opengl.org/), [*Vulkan*](https://www.khronos.org/vulkan/), [*DirectX 11 (DX 11)*](https://docs.microsoft.com/en-us/windows/win32/direct3d11/atoc-dx-graphics-direct3d-11), 
 [*DirectX 12 (DX 12)*](https://docs.microsoft.com/en-us/windows/win32/direct3d12/direct3d-12-graphics) , and 
