@@ -101,7 +101,7 @@ and as before, the kernel generates an exception.
 
  ```c
 
- //Repeatedly perform expensive load, store, and ALU operations
+ //STEP 1: Repeatedly perform expensive load, store, and ALU operations
  for(i=0; i<1000; i++)
  {
      int junk = buff[0];            // Load data
@@ -109,9 +109,35 @@ and as before, the kernel generates an exception.
      buff[0] = (int)pow(junk, 10);  // Expensive ALU exponentiation, followed by store operation
  }
  
+ //STEP 2: Access the data at protected location
  int *secretPtr = 0xffff;           // Protected Address
  int secret = *secretPtr;           // Load from protected address
 
  ```
 
- 
+PART 1 involves repeatedly performing expensive Loads, stores, and ALU operations. This encourages the CPU to proceed to PART 2 in out of order execution when it is waiting for the load/store to complete, or while performing the expensive ALU operation.
+
+PART 2 involves accessing a protected address, which in turn generates a page fault speculatively and stores it in the buffer.<br>
+The response to this speculative page fault differentiates CPUs vulnerable to Meltdown and those resistant to it.
+
+**Vulnerable CPUs** load the value from the secret data into the cache.  
+**Resistant CPUs**, on the other hand, either load garbage or zero into the cache.
+
+Once the data is loaded into the cache, and before the out of order execution can commit, it is trivial to derive the secret value using a side channel timing attack.
+
+## Conclusion
+
+That brings us to the end of this post. I hope I have been able to give a clear understanding of
+the high level mechanics of meltdown.<br>
+I have skimmed over the actual implementation of meltdown to keep this beginner-friendly.I plan to cover these in a later post.<br>
+I have also skimmed over the specifics of out of order execution and speculation. Relevant links are in the references.
+
+## References
+
+- [The Meltdown Attack paper](https://meltdownattack.com/meltdown.pdf)
+- [Flush + Reload (timing attack on cache)](https://eprint.iacr.org/2013/448.pdf)
+- [H. Wong's experiments on meltdown](http://blog.stuffedcow.net/2018/05/meltdown-microarchitecture/)
+- [Dynamic Scheduling - Tomasulo's Approach](https://www.cc.gatech.edu/~milos/Teaching/CS6290F07/4_Tomasulo.pdf)
+- [Hardware based Speculation](https://www.eecs.yorku.ca/course_archive/2006-07/F/4201/ILP4_Spec.pdf)
+- [Linux System Administrators Guide, Chapter 6](https://www.tldp.org/LDP/sag/html/memory-management.html)
+- [Linux Kernel documentation - Memory Management](https://www.kernel.org/doc/html/latest/admin-guide/mm/index.html)
