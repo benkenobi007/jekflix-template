@@ -31,11 +31,21 @@ The most popular display adapters are
 
 ## Graphics APIs
 
-Due to the sheer complexity of most modern 3D applications (read AAA games), the use of APIs (Application Programming Interfaces) has become ubiquitous for al kinds of graphics programming. The primary benefits of the APIs is that they abstract away a significantamount of unnecessary detail away from the hardware while still enabling programmers to control the graphics operations on the GPU. Someof the most well known APIs are *OpenGL*, *Vulkan*, *DirectX 11*, *DirectX 12 (DX 12)*, and *Metal*.
+Due to the sheer complexity of most modern 3D applications (read AAA games), the use of APIs (Application Programming Interfaces) has become ubiquitous for al kinds of graphics programming. The primary benefits of the APIs is that they abstract away a significantamount of unnecessary detail away from the hardware while still enabling programmers to control the graphics operations on the GPU. Someof the most well known APIs are [*OpenGL*](https://www.opengl.org/), [*Vulkan*](https://www.khronos.org/vulkan/), [*DirectX 11 (DX 11)*](https://docs.microsoft.com/en-us/windows/win32/direct3d11/atoc-dx-graphics-direct3d-11), 
+[*DirectX 12 (DX 12)*](https://docs.microsoft.com/en-us/windows/win32/direct3d12/direct3d-12-graphics) , and 
+[*Metal*](https://developer.apple.com/metal/).
 
 All APIs have specialized functions to query and manipulate the state of the GPU. While each API may have differing implementations, and somelike Vulkan and DX-12 are very low level, they all provide a way of querying the essential information such as:
 - Is the GPU active ?
 - PCI port number
 - Memory available 
-- Any exceptions encountered, along with a typical "GPU stack" trace
+- Any exceptions encountered, along with a typical "GPU stack" trace<br>
+
+All of which are crucial for setup, debugging, and diagnostic operations while writing graphics applications. With a fair idea of how to communicate to the GPU, let us now turn our attention to the graphics pipeline.
+
+## Graphics Pipeline
+
+Before going any further - an important assumption made here is that we're dealing with 3D scene coordinates that have not been already *rendered* (such as a picture file on your computer). The term *rendered* is here loosely used to describe any information which is already in form of pixels (and does not need to be converted from vertices to pixels).
+
+![Standard Graphics Pipeline](/assets/img/Gfx_Pipeline/pipeline.JPG "Fig 1. The Standard Graphics Pipeline")
 
