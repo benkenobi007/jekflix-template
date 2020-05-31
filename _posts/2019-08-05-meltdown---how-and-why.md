@@ -4,7 +4,7 @@ layout: post
 title: "Meltdown - How and Why"
 subtitle: 
 description: This post is a high level overview of Meltdown. I attempt to explain the nuts and bolts of meltdown without diving into too much technical detail. Only a minimal knowledge of computers is required.
-image: https://images.ctfassets.net/9ijwdiuuvngh/62ev5Y8JHisAAi0yOuIQKa/5c5e3850d98b8f841cecfc66930c81c4/BP_Meltdown-Spectre.png
+image: /assets/img/Meltdown/BP_Meltdown-Spectre.png
 optimized_image:
 category: security
 tags:
