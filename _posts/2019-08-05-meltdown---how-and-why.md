@@ -24,3 +24,17 @@ Whenever we run a program, we expect that the CPU executes the instructions line
 For example, let us say we want to bake a cake and prepare a salad. If we were to follow in-order execution, we would first have to wait for the cake to be baked, before we could even start collecting ingredients for the salad !
 
 ![in order execution flow](/assets/img/Meltdown/In_order_cropped.png "Fig 1. In-Order Execution")
+
+From the figure, we can see that there are 4 steps needed to make the cake and salad.
+- Prepare the cake batter
+- Place the cake for baking
+- Wait (upto an hour !!) for the cake to finish baking
+- Prepare the salad
+
+Isn't it a gross waste of time to sit twiddling our thumbs until the cake is baked ?<br>
+Wouldn't we be able to make the salad while waiting for the cake to get baked ?<br>
+Of course we would ! The key idea is that **the salad does not depend on the cake** in any manner whatsoever.
+
+Let us now re-attempt the same excercise, but with Out of Order execution.
+
+![out of order execution flow](/assets/img/Meltdown/out_order.png "Fig 2. Out-of-Order Execution")
