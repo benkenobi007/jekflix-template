@@ -45,7 +45,23 @@ All of which are crucial for setup, debugging, and diagnostic operations while w
 
 ## Graphics Pipeline
 
-Before going any further - an important assumption made here is that we're dealing with 3D scene coordinates that have not been already *rendered* (such as a picture file on your computer). The term *rendered* is here loosely used to describe any information which is already in form of pixels (and does not need to be converted from vertices to pixels).
+Before going any further - an important assumption made is that we're dealing with 3D scene coordinates that have not been already *rendered*. The term *rendered* is loosely used to describe any information which is already in form of pixels (such as a picture file on your computer which does not need to be converted from vertices to pixels).
+
+The figure below shows the raster graphics pipeline.
 
 ![Standard Graphics Pipeline](/assets/img/Gfx_Pipeline/pipeline.JPG "Fig 1. The Standard Graphics Pipeline")
 
+To get a better idea, let us equate the the functionality of the rasterizer to that of a camera that is capturing the external world onto 2D film.
+
+### I. Vertex Generation
+
+Any picture must mandatorily have an **object** being shown. It would indeed be a rather disconcerting revelation if the millions of photographs taken suddenly go blank with absolutely nothing in them. Of course, while dealing with an actual camera, the Entire Earth and space are just waiting to be studied in all their glory.
+
+Unfortunately, the raterizer begins with absolutely **nothing**. Think pre Big Bang nothing. No light, no universe, no existence, and mosty importantly, nothing to photograph and post online !! While this is rather depressing, the power of creation is bestowed in the hands of the divine programmer.
+
+Moving on from the philosophy of quantum mechanics, the task of the programmer is to define exactly **what** needs to be drawn. 
+And we are required to define it in all gory detail. The coordinates the vertices of the object must be specified in 3D space, with respect to an arbitrary origin. For the sake of simplicity, let us consider a 3D cuboid. 
+
+#### TODO : Animation - Cuboid pops into existence
+
+While it may seem like nothing, all the dimensions of the cuboid must be determined prior to creating the vertices.
