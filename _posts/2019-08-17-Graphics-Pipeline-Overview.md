@@ -59,7 +59,7 @@ This is crucial for setup, debugging, and diagnostic operations while writing gr
 
 Before going any further - an important assumption made is that we're dealing with 3D scenes that have not been already *rendered*. The term *rendered* is loosely used to describe any information which is already in form of pixels (such as a picture file on your computer which does not need to be converted from vertices to pixels).
 
-The functionality of the GPU can be equated to a camera that is capturing the external world onto a 2D screen. The object of interest (whose photo is being taken) needs to be determined, the positon of the camera should be fixed, and the camera should then be oriented to get the desired view of the object.
+The functionality of the GPU can be equated to a camera that is capturing the external world onto a 2D screen. The object of interest (whose photo is being taken) needs to be determined, the positon of the camera should be fixed, and the camera should then be oriented to get the desired view of the object, and finally, the photo can be taken.
 
 The graphics pipeline is analogous to this, with some additional constraints and freedom that the virtual world brings. A typical representation of the graphics pipeline is given below. 
 
@@ -83,7 +83,7 @@ Consequently, the divine power of creating the world rests with the holy graphic
 Moving on from the philosophy of quantum mechanics, the task of the programmer is to define exactly **what** is going to be displayed. And this involves visualizing the scene, defining the origin of the scene, and finally specifying all the vertices needed to draw the scene.
 For the sake of simplicity, let's consider a scene with only a cuboid (which needs 8 vertices). The first task is to determine the parameters of the cuboid, viz., the length, the breadth, and the height. Then, one of the vertices is fixed as the origin and the position of the other vertices is defined such that they form the required cuboid.
 
-Creation of an arbitrary cuboid can be seen below.
+Creation of this arbitrary cuboid can be seen below.
 
 <center>
 <video autoplay loop width="480" height="360">
@@ -94,17 +94,17 @@ Creation of an arbitrary cuboid can be seen below.
 The stream of vertices is now passed to the GPU strictly in order (more on this in primitive generation).
 
 ### II. Vertex Processing
-Now that the object has been created, the next step is to place it in the "world" and in front of the "camera" to get the desired view. This includes performing various transformations such as translation, rotation and scaling.
+Now that the object has been created, the next step is to place it in the "world" and in front of the "camera" to get the desired view. This includes performing various transformations such as translation, rotation and scaling (seen in the preceding animation).
 
 ### III. Primitive Generation
 With all the vertices now placed in front of the GPU "camera", the next step is to assemble them together into the required geometric shape. Recall that the vertices were passed to the GPU **in order**. Based on this order, the vertices are grouped into polygons called **primitives**. As discussed earlier, the triangle is the primitive of choice in graphics due to the various desirable properties.
 
-All geometrical shapes are thus represented using traingles. In our case, the cuboid has 6 faces each of which are represented by 2 triangles (as shown in the figure). We hence get a total of 12 triangle primitives that are generated to represent the cuboid.
+All geometrical shapes are thus represented using triangles. In our case, the cuboid has 6 faces each of which are represented by 2 triangles (as shown in the figure). We hence get a total of 12 triangle primitives that are generated to represent the cuboid.
 
 ![Cuboid Primitives](/assets/img/Gfx_Pipeline/cuboid_primitives.JPG "Fig 2. Primitive Generation")
 
 ### IV. Primitive Processing
-Each primitive can be rendered by the GPU. But should the GPU render each and every primitive ? Look back to the cuboid creation sequence. Are all faces of the cuboid visible at any time ? No ! So why should the orecious GPU resources be wasted in rendering primitives that are not going to be visible ?
+Each primitive can be rendered by the GPU. But should the GPU render each and every primitive ? Look back to the cuboid creation sequence. Are all faces of the cuboid visible at any time ? No ! So why should the precious GPU resources be wasted in rendering primitives that are not going to be visible ?
 
 While it doesn't seem to matter much here, the average number of objects in most graphics applications is in the thousands, and if all the primitives are rendered, we are looking at a primitive count in the neighbourhood of a million!
 
@@ -114,7 +114,7 @@ Another aspect to be considered is portion of the primitive which is being focus
 
 ![Clipping Operation](/assets/img/Gfx_Pipeline/clip_2.JPG "Fig 3. Clipping Operation")
 
-The solution is **clipping** the invisible parts of the primitive. In the figure above, triangle ABc is only partially in view. Hence, the triangle T4 is clipped, and the resulting set of vertices are grouped into new primitives T1, T2, and T3.
+The solution is **clipping** the invisible parts of the primitive. In the figure above, triangle ABC is only partially in view. Hence, the triangle T4 is clipped, and the resulting set of vertices are grouped into new primitives T1, T2, and T3.
 
 ### V. Fragment Generation / Rasterization
 
@@ -127,7 +127,7 @@ Note that the ordering of the primitives doesn't matter here, and each primitive
 
 ### VI. Fragment Processing
 
-In this stage each fragment is shaded to give the desired colour. The shading can be controlled using programs called **fragment shaders** that are written by the programmer. A fragment shader takes a fragment as an input, and applies varies interpolations of colours to get the desired shading pattern. A simplistic example is shwon in the figure below.
+In this stage each fragment is shaded to give the desired colour. The shading can be controlled using programs called **fragment shaders** that are written by the programmer. A fragment shader takes a fragment as an input, and applies various colour interpolations to get the desired shading pattern. A simplistic example is shwon in the figure below.
 
 ![Fragment Processing](/assets/img/Gfx_Pipeline/fragment_processing.jpg "Fig 5. Fragment Processing")
 
@@ -143,15 +143,16 @@ The resulting image is sent to the display over the display adapter.
 
 ## Summary
 
-The pipeline discussed here is commonly known as the "raterization" pipeline and is the de-facto standard for all designing GPU hardware and graphics APIs.
+The pipeline discussed here is commonly known as the **raster pipeline** and is the de-facto standard for designing GPU hardware and graphics APIs.
 
 While the overall pipeline is followed in all the APIs, most of them have their own permutation and combination of functionalities. For example, certain APIs allow pixel culling to be done prior to fragment processing, saving performance.
 
-The implementation details of each API are also widely different, with those like OpenGL and DX11 being relatively higher level and having lesser **time to triangle**(the amount of code needed to get a simple triangle on screen). On the other hand, APIs like Vulkan and DX12 have a huge learning curve due to the lower level hooks needed to be setup and also a higher time to triangle. On the other hand, both Vulkan and DX12 generally have the potential for higher performance and high control over the resource utilization, enabling tight optimization of resources.
+The implementation details of each API are also widely different, with those like OpenGL and DX11 being relatively higher level and having lesser **time to triangle** (the amount of code needed to get a simple triangle on screen). On the other hand, APIs like Vulkan and DX12 have a huge learning curve due to the lower level hooks needed to be setup and a higher time to triangle. On the other hand, both Vulkan and DX12 have the potential for higher performance and control over the resource utilization, enabling tight optimization of resources.
 
 In general the best API to get started with graphics is OpenGL. Vulkan is an API mainly targeted at experienced graphics devs who want to squeeze out that last bit of performance from their hardware. 
 
-Interested in getting into computer graphics and game development ? 
+**Are you interested in getting into computer graphics and game development?**
+  
 Here are some resources that I found extremely useful:
 - [Suraj Sharma's OpenGL Series](https://www.youtube.com/playlist?list=PL6xSOsbVA1eYSZTKBxnoXYboy7wc4yg-Z) - basically guides you through setting up a 3D renderer.
 - [The Cherno's OpenGL playlist](https://www.youtube.com/playlist?list=PLlrATfBNZ98foTJPJ_Ev03o2oq3-GGOS2) - bares OpenGL in all gory detail
