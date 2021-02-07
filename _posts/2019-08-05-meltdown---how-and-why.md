@@ -6,7 +6,7 @@ subtitle:
 description: This post is a high level overview of Meltdown. I attempt to explain the nuts and bolts of meltdown without diving into too much technical detail. Only a minimal knowledge of computers is required.
 image: /assets/img/Meltdown/BP_Meltdown-Spectre.png
 optimized_image:
-category: security
+category: Security
 tags:
 author: Agent 007
 paginate: false

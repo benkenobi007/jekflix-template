@@ -1,7 +1,7 @@
 # Site Settings
 name: TecHooT
 title: TecHooT
-description: The Techoot (or TecH007) is a blog about computer systems mainly targeted at those with little to no prior technical knowledge.
+description: The Techoot (or TecH007) is a blog about computers mainly targeted at those with little to no prior technical knowledge.
 tags:
   - blog
   - computer systems
@@ -23,7 +23,7 @@ menu:
   - title: Feed
     url: /feed.xml
 email: 
-disqus_username: disqus_username
+disqus_username: disqus_aznAsbGyyK
 
 
 # Social Media Settings
