@@ -127,7 +127,7 @@ Note that the ordering of the primitives doesn't matter here, and each primitive
 
 ### VI. Fragment Processing
 
-In this stage each fragment is shaded to give the desired colour. The shading can be controlled using programs called **fragment shaders** that are written by the programmer. A fragment shader takes a fragment as an input, and applies various colour interpolations to get the desired shading pattern. A simplistic example is shwon in the figure below.
+In this stage each fragment is shaded to give the desired colour. The shading can be controlled using programs called **fragment shaders** that are written by the programmer. A fragment shader takes a fragment as an input, and applies various colour interpolations to get the desired shading pattern. A simplistic example is shown in the figure below.
 
 ![Fragment Processing](/assets/img/Gfx_Pipeline/fragment_processing.jpg "Fig 5. Fragment Processing")
 

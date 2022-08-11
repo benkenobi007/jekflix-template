@@ -1,3 +1,30 @@
 ---
 ---
 @import "jekflix";
+
+// Dark theme changes
+body
+{
+    // background-color: rgb(20, 20, 20);
+    background-color: rgb(0, 0, 0);   // Dark background - comment this out for default color
+    color: whitesmoke;
+}
+
+.post-content
+{
+    color: whitesmoke;  // White text in post content
+}
+
+.see-also
+{
+    color: whitesmoke;
+
+    border-left-style: solid;
+    border-left-color: rgb(37, 37, 37);
+    border-left-width: thin;
+    
+    h3
+    {
+        color: whitesmoke;
+    }
+}
