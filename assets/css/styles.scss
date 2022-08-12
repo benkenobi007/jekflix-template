@@ -28,3 +28,21 @@ body
         color: whitesmoke;
     }
 }
+
+.bar-header
+{
+    background-color: rgb(0, 0, 0);
+}
+
+body.light:not(.main-page) 
+{
+    .bar-header
+    {
+        background-color: rgb(0, 0, 0);
+
+        .icon-search,
+        .icon-menu {
+            fill: white;
+        }
+    }
+}
