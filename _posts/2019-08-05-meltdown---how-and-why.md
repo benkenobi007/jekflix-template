@@ -46,7 +46,7 @@ Coming back to the world of CPUs, let us replace the baking by a memory load, an
 as an ALU operation. Hence, the CPU begins executing arithmetic operations, even as it waits for some **unrelated** data to be loaded from the memory.
 Out of order execution has become a standard feature on all modern CPUs to maximize performance.
 
-## Virtual Memory and Memory Mapping (Linux)
+## Virtual Addresses and Memory Mapping (Linux)
 
 Let us now look at how memory is mapped by the Linux Kernel.<br>
 Any program in execution is called a **process**.
@@ -56,9 +56,9 @@ Each process has its own set of memory assigned by the kernel. For obvious reaso
 the location/content of memory belonging to another process. 
 To enforce this, we have "Virtual Memory" for each process. The kernel
 assigns each process its own exclusive address space.<br>
-Virtual memory serves several purposes, such as simplifying I/O, memory accesses, etc. which are beyond the scope of this post.
+Virtual Addresses (Paging) serves several purposes, such as simplifying I/O, memory accesses, etc. which are beyond the scope of this post.
 
-The component of virtual memory that concerns us is the **virtual address space (VAS)**.<br>
+The component of memory management that concerns us is the **virtual address space (VAS)**.<br>
 The virtual address space of a process is the set of virtual memory addresses assigned by the kernel.
 The address space for each process is private and cannot be accessed by other processes.
 

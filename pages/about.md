@@ -9,9 +9,30 @@ permalink: /about/
 
 # About
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Computer Systems
+
+The stuff that makes a computer click,
+
+From apps to the CPU’s every tick,
+
+The stuff that helps push new frontiers,
+
+By growing more powerful in the interior,
+
+The stuff that’s behind some of the greatest innovations,
+
+While accidentally causing some abominations,
+
+The stuff that’s found in all the fields,
+
+Without which results would not yield,
+
+The stuff that secures your data-store,
+
+From viruses, worms and hackers galore,
+
+The stuff that helps the hardware chill,
+
+While driving games that universally thrill !
+
+\- THAT, is Computer Systems, in a nut$hell :)
