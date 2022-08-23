@@ -14,7 +14,7 @@ paginate: false
 
 Let us start by exploring the key concepts required:
 - Out of Order/ Speculative execution
-- Virtual Memory and memory mapping
+- Virtual Addresses and memory mapping
 - Memory Protection
 
 
@@ -54,7 +54,7 @@ For example, instances of Firefox, Notepad, File Explorer, etc. are all processe
 
 Each process has its own set of memory assigned by the kernel. For obvious reasons, one process should not be able to figure out
 the location/content of memory belonging to another process. 
-To enforce this, we have "Virtual Memory" for each process. The kernel
+To enforce this, we have "Virtual Address Space" for each process. The kernel
 assigns each process its own exclusive address space.<br>
 Virtual Addresses (Paging) serves several purposes, such as simplifying I/O, memory accesses, etc. which are beyond the scope of this post.
 
